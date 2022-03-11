@@ -8,6 +8,10 @@ $StringMerge01 = $DHCP_Service + $DHCP_Status
 #取Service運行值，備於填入郵件主旨
 $SubjectService = get-service DHCPServer |select Status 
 
+
+#備份conifg
+Backup-DhcpServer -ComputerName "dhcp02.unimicron.com" -Path "C:\JOBS\DHCP_backup"
+
  ### Smtp setup
 
 $smtp = "smtp.gmail.com"
