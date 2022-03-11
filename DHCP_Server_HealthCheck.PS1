@@ -1,9 +1,13 @@
 #取值轉字串放入變數
 $QH_DHCP_Service = get-service DHCPServer | Out-String
 $QH_DHCP_Status = Get-DhcpServerv4ScopeStatistics -ComputerName dhcp02.unimicron.com | Out-String
+
 #合併兩變數內的string
 $StringMerge01 = $QH_DHCP_Service + $QH_DHCP_Status
+
+#取Service運行值，備於填入郵件主旨
 $SubjectService = get-service DHCPServer |select Status 
+
  ### Smtp setup
 
 $smtp = "smtp.gmail.com"
