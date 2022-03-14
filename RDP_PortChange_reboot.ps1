@@ -1,4 +1,4 @@
-#變更RDP Port避免被掃描或是滲透測試
+#變更RDP Port避免被掃描或是暴力破解滲透
 
 #設定key值，並將對應的rule 加入firewall
 $NewPortNum = 13579
